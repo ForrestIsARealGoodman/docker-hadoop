@@ -7,10 +7,10 @@ ENV HADOOP_HOME=/usr/local/hadoop
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin
 
 RUN apk update && \
-    apk add --no-cache openssh-server wget && \
+    apk add --no-cache openssh-server wget openrc && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
-    /etc/init.d/sshd restart && \
+    rc-service sshd start && \
     wget HADOOP_URL && \
     mv hadoop-$HADOOP_VERSION.tar.gz /usr/local/hadoop && \
     rm hadoop-$HADOOP_VERSION.tar.gz && \
