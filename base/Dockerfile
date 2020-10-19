@@ -10,7 +10,7 @@ RUN apk update && \
     apk add --no-cache openssh-server wget openrc && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
-    wget HADOOP_URL && \
+    wget $HADOOP_URL && \
     mv hadoop-$HADOOP_VERSION.tar.gz /usr/local/hadoop && \
     rm hadoop-$HADOOP_VERSION.tar.gz && \
     rm /usr/local/hadoop/share/doc -rf
