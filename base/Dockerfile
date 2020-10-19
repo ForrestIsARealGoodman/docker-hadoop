@@ -7,7 +7,7 @@ ENV HADOOP_HOME=/usr/local/hadoop
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin
 
 RUN apk update && \
-    apk add -y openssh-server wget apk add openrc && \
+    apk add --no-cache openssh-server wget openrc && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
     rc-service ssh start && \
