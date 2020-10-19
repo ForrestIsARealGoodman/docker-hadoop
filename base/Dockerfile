@@ -10,7 +10,7 @@ RUN apk update && \
     apk add -y openssh-server wget && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
-    rc-service ssh start && \
+    systemctl restart sshd && \
     wget HADOOP_URL && \
     mv hadoop-$HADOOP_VERSION.tar.gz /usr/local/hadoop && \
     rm hadoop-$HADOOP_VERSION.tar.gz && \
