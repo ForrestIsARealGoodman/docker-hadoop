@@ -6,8 +6,8 @@ ENV HADOOP_URL https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/
 ENV HADOOP_HOME=/usr/local/hadoop
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin
 
-RUN apt-get update && \
-    apt-get install -y openssh-server wget sudo -y && \
+RUN apk update && \
+    apk add -y openssh-server wget sudo -y && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
     service ssh start && \
