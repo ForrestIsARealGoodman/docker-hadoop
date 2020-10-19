@@ -12,7 +12,6 @@ RUN apk update && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
     wget $HADOOP_URL && \
     mv hadoop-$HADOOP_VERSION.tar.gz /usr/local/hadoop && \
-    rm hadoop-$HADOOP_VERSION.tar.gz && \
     rm /usr/local/hadoop/share/doc -rf
 
 
