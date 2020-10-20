@@ -7,7 +7,7 @@ ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 ENV HADOOP_VERSION 3.3.0
 ENV HADOOP_URL packages/hadoop-$HADOOP_VERSION.tar.gz
-ENV HADOOP_HOME=/usr/local/hadoop
+ENV HADOOP_HOME=/usr/local/hadoop-$HADOOP_VERSION
 ENV PATH=$PATH:$JAVA_HOME/bin:/usr/local/hadoop/bin:/usr/local/hadoop/sbin
 
 ADD $JDK8_URL /usr/local/
