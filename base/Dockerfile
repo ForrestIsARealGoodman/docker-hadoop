@@ -14,7 +14,7 @@ ADD $JDK8_URL /usr/local/
 ADD $HADOOP_URL /usr/local
 
 RUN apt-get update && \
-    apt-get install --no-cache openssh-server wget && \
+    apt-get install openssh-server wget -y && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
     rm $HADOOP_HOME/share/doc -rf
