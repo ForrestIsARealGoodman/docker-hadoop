@@ -6,7 +6,7 @@ ENV HADOOP_URL packages/hadoop-$HADOOP_VERSION.tar.gz
 ENV HADOOP_HOME=/usr/local/hadoop
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin
 
-ADD HADOOP_URL /usr/local
+ADD $HADOOP_URL /usr/local
 
 RUN apk update && \
     apk add --no-cache openssh-server wget openrc && \
