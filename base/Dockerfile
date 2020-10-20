@@ -20,6 +20,8 @@ ENV PATH=$PATH:$JAVA_HOME/bin:/usr/local/hadoop/bin:/usr/local/hadoop/sbin
 ADD $JDK8_URL /usr/local/
 ADD $HADOOP_URL /usr/local
 
+COPY etc/* $HADOOP_HOME/etc/hadoop/
+
 RUN apt-get update && \
     apt-get install openssh-server wget -y && \
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
